@@ -1,5 +1,4 @@
 @import "./tools/toast.scss";
 @import "./tools/normalize.scss";
-* {
-  color: blue;
-}
+@import "./base/base.scss";
+@import "./header.scss";

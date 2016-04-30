@@ -3,5 +3,8 @@
     "libs": [
         "browser",
         "jquery"
+    ],
+    "loadEagerly": [
+        "js/**/*.js"
     ]
 }
