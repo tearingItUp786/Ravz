@@ -7,37 +7,6 @@ header {
     background-size: cover;
     background-attachment: fixed;
     overflow: hidden;
-    nav {
-        position: fixed;
-        width: 100%;
-        height: 105px;
-        font-weight: 100;
-        font-size: 1.5em;
-        overflow: hidden;
-        .logo {
-            font-family: monospace;
-            padding: 0 35px 0 35px;
-            margin: 0;
-            background: url("/images/logo.svg");
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: contain;
-            height: inherit;
-            width: 20%;
-        }
-        ul {
-            height: inherit;
-            list-style-type: none;
-            display: flex;
-            padding: 0;
-            margin: 0;
-            align-items: center;
-            justify-content: space-around;
-            li {
-                padding: 35px;
-            }
-        }
-    }
     h1 {
         position: absolute;
         top: 45%;
@@ -57,8 +26,50 @@ header {
         left: 50%;
         margin-left: 150px;
     }
-    .tinted-nav {
-        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
-        background-color: #232323;
+}
+nav {
+    position: fixed;
+    width: 100%;
+    height: 105px;
+    font-weight: 100;
+    font-size: 1.5em;
+    .navigation {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        .logo {
+            background-image: url("/images/logo.svg");
+            width: 20%;
+            height: 105px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .nav-item {
+            width: 20%;
+            text-align: center;
+            a {
+                padding: 30px;
+                color: white;
+                text-decoration: none;
+            }
+        }
+    }
+}
+.tinted-nav {
+    background-color: black;
+}
+@media (max-width: 700px) {
+    .closed {
+        ul {
+            display: none;
+        }
+    }
+    .open {
+        height: 400px;
     }
 }
