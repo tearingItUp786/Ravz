@@ -30,14 +30,19 @@ header {
 .nav-start {
     position: fixed;
     width: 100%;
-    height: 105px;
+    height: auto;
     font-weight: 100;
-    font-size: 1.5em;
+    font-size: 25px;
     margin: 0;
     padding: 0;
-    .navigation {
+    z-index: 1999;
+    .col {
         padding: 0;
-        margin: 0;
+    }
+    .navigation {
+        width: 50%;
+        padding: 0;
+        margin: 0 auto;
         list-style-type: none;
         .logo {
             padding: 0;
@@ -50,26 +55,67 @@ header {
         }
         .nav-item {
             padding: 0;
-            width: 20%;
             text-align: center;
             a {
-                padding: 30px;
+                padding: 30px 0;
                 color: white;
                 text-decoration: none;
             }
         }
+        .nav-item:nth-child(1){
+          padding-left: 20px;
+        }
+        .nav-item:nth-child(4) {
+            padding-left: 20px;
+        }
+        .nav-item:last-of-type {
+            padding-left: 30px;
+        }
+    }
+    .c-hamburger {
+        display: none;
     }
 }
 .tinted-nav {
     background-color: black;
 }
-@media (max-width: 700px) {
-    .closed {
-        ul {
-            display: none;
-        }
+@media(max-width: 900px) {
+    .nav-item {
+        font-size: 20px;
     }
-    .open {
-        height: 400px;
+}
+@media (max-width: 700px) {
+    .nav-start {
+        .navigation {
+            margin: 0;
+            width: 300px;
+            font-size: 20px;
+            background-color: lighten($primary-pink, 10%);
+            .logo {
+                display: none;
+            }
+            .nav-item {
+                padding: 30px;
+                text-align: center;
+                border-bottom-style: solid;
+                border-bottom-width: 1px;
+
+                a{
+                  padding: 30px 50px 30px 50px;
+                }
+            }
+            .nav-item:last-of-type {
+                border: none;
+            }
+        }
+        .closed {
+            transform: translate(0, -400px);
+            transition: transform 1s;
+        }
+        .open {
+            transform: translate(0, 0);
+            transition: transform 1s;
+        }
+        @import "./tools/hamburger.scss";
     }
 }
