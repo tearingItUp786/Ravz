@@ -41,6 +41,7 @@
 \*-----------------------------------*/
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,300,100");
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,300,100");
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,300,100");
 .grid {
   list-style: none;
   margin-left: -20px; }
@@ -250,13 +251,13 @@
   min-height: 1px;
   padding-left: 20px;
   vertical-align: top; }
-  @media (max-width: 700px) {
+  @media (max-width: 800px) {
     .grid__col {
       display: block;
       margin-left: 0;
       margin-right: 0;
       width: auto; } }
-  @media (max-width: 700px) and (min-width: 480px) {
+  @media (max-width: 800px) and (min-width: 480px) {
     .grid__col[class*="grid__col--m-"] {
       display: inline-block;
       margin-right: -.24em; }
@@ -701,12 +702,13 @@ header {
   background-size: cover;
   background-attachment: fixed;
   overflow: hidden; }
-  header h1 {
+  header .greeting {
     position: absolute;
     top: 45%;
     font-weight: 100;
     left: 10%;
-    font-size: 45px; }
+    font-size: 45px;
+    z-index: 1; }
   header .brush {
     width: 300px;
     height: 300px;
@@ -727,22 +729,30 @@ header {
   font-size: 25px;
   margin: 0;
   padding: 0;
-  z-index: 1999; }
+  z-index: 1999;
+  -webkit-transition: background-color 700ms linear;
+  -moz-transition: background-color 700ms linear;
+  -o-transition: background-color 700ms linear;
+  -ms-transition: background-color 700ms linear;
+  transition: background-color 700ms linear; }
   .nav-start .col {
     padding: 0; }
   .nav-start .navigation {
     width: 50%;
     padding: 0;
     margin: 0 auto;
-    list-style-type: none; }
+    list-style-type: none;
+    min-width: 700px; }
     .nav-start .navigation .logo {
-      padding: 0;
-      background-image: url("/images/logo.svg");
-      width: 20%;
-      height: 105px;
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center; }
+      padding: 0; }
+      .nav-start .navigation .logo .inner-logo {
+        width: 80%;
+        height: 100%; }
+      .nav-start .navigation .logo .svg-pink path {
+        fill: #fa67bc;
+        stroke: #fa67bc; }
+      .nav-start .navigation .logo .svg-pink polygon {
+        stroke: #fa67bc; }
     .nav-start .navigation .nav-item {
       padding: 0;
       text-align: center; }
@@ -750,24 +760,35 @@ header {
         padding: 30px 0;
         color: white;
         text-decoration: none; }
+      .nav-start .navigation .nav-item a:hover {
+        color: black; }
     .nav-start .navigation .nav-item:nth-child(1) {
       padding-left: 20px; }
     .nav-start .navigation .nav-item:nth-child(4) {
-      padding-left: 20px; }
+      margin-left: -3%; }
     .nav-start .navigation .nav-item:last-of-type {
       padding-left: 30px; }
   .nav-start .c-hamburger {
     display: none; }
 
 .tinted-nav {
-  background-color: black; }
+  background: white; }
+  .tinted-nav .navigation > .nav-item > a {
+    color: #fc98d2; }
 
 @media (max-width: 900px) {
+  .nav-start .navigation {
+    width: 80%; }
   .nav-item {
     font-size: 20px; } }
 
-@media (max-width: 700px) {
+@media (max-width: 800px) {
+  header .greeting {
+    font-size: 35px; }
+  header .brush {
+    right: 0; }
   .nav-start {
+    height: 0;
     /* -----------------------------------------------------------------------------
   HAMBURGER ICONS COMPONENT
 
@@ -782,18 +803,22 @@ header {
     /* active state, i.e. menu open */ }
     .nav-start .navigation {
       margin: 0;
-      width: 300px;
+      width: 325px;
       font-size: 20px;
-      background-color: #fc98d2; }
+      background-color: white; }
       .nav-start .navigation .logo {
         display: none; }
       .nav-start .navigation .nav-item {
         padding: 30px;
         text-align: center;
+        border-bottom-color: #fdcae8;
         border-bottom-style: solid;
         border-bottom-width: 1px; }
         .nav-start .navigation .nav-item a {
-          padding: 30px 50px 30px 50px; }
+          color: #fc98d2;
+          padding: 30px 50px; }
+        .nav-start .navigation .nav-item a:hover {
+          color: black; }
       .nav-start .navigation .nav-item:last-of-type {
         border: none; }
     .nav-start .closed {
@@ -810,8 +835,8 @@ header {
       overflow: hidden;
       margin: 0;
       padding: 0;
-      width: 96px;
-      height: 96px;
+      width: 80px;
+      height: 80px;
       font-size: 0;
       text-indent: -9999px;
       -webkit-appearance: none;
@@ -827,10 +852,10 @@ header {
     .nav-start .c-hamburger span {
       display: block;
       position: absolute;
-      top: 44px;
-      left: 18px;
-      right: 18px;
-      height: 8px;
+      top: 38px;
+      left: 12px;
+      right: 12px;
+      height: 4px;
       background: white; }
     .nav-start .c-hamburger span::after,
     .nav-start .c-hamburger span::before {
@@ -838,15 +863,18 @@ header {
       display: block;
       left: 0;
       width: 100%;
-      height: 8px;
+      height: 4px;
       background-color: #fff;
       content: ""; }
     .nav-start .c-hamburger span::before {
-      top: -20px; }
+      top: -16px; }
     .nav-start .c-hamburger span::after {
-      bottom: -20px; }
+      bottom: -16px; }
     .nav-start .c-hamburger--htla {
-      background-color: #fa67bc; }
+      background-color: #fa67bc;
+      border-style: solid;
+      border-color: white;
+      border-width: 1px; }
     .nav-start .c-hamburger--htla span {
       transition: transform 0.3s; }
     .nav-start .c-hamburger--htla span::before {
@@ -864,10 +892,19 @@ header {
       width: 50%; }
     .nav-start .c-hamburger--htla.is-active span::before {
       top: 0;
-      transform: translateX(38px) translateY(4px) rotate(45deg); }
+      transform: translateX(32px) translateY(2px) rotate(45deg); }
     .nav-start .c-hamburger--htla.is-active span::after {
       bottom: 0;
-      transform: translateX(38px) translateY(-4px) rotate(-45deg); } }
+      transform: translateX(32px) translateY(-2px) rotate(-45deg); } }
+
+@media (max-width: 480px) {
+  header .greeting {
+    margin: 0;
+    font-size: 25px; }
+  header .brush {
+    width: 200px;
+    margin-left: 50px;
+    right: 0; } }
 
 .about {
   padding: 70px 0 70px 0;
