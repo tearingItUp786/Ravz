@@ -1,0 +1,26 @@
+.portfolio{
+  display: flex;
+  align-items: center;
+  padding: 70px;
+  overflow: hidden;
+  box-sizing: border-box;
+  width: 100%;
+  height: auto;
+  background: linear-gradient(rgba(black, 0.6), rgba(black, 0.6)), url("/images/couple1.jpg");
+  // background-repeat-x: no-repeat;
+  background-size: cover;
+  background-position: top;
+  background-attachment: fixed;
+}
+.thumbnail{
+  margin-top: 5%;
+}
+
+.thumbnail>img{
+  height: 100%;
+  width:90%;
+  max-width: 100%;
+  max-height: 100%;;
+  display: block;
+  margin: auto;
+}

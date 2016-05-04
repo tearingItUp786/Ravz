@@ -1,3 +1,20 @@
+// (function($) {
+//     $(function() {
+//
+//         $(window).scroll(function() {
+//             clearTimeout($.data(this, "scrollCheck"));
+//             $.data(this, "scrollCheck", setTimeout(function() {
+//                 $('nav').removeClass('tinted-nav');
+//                 $('.inner-logo').removeClass('svg-pink');
+//                 $('nav').addClass('black-tint');
+//             }, 1000));
+//
+//         });
+//
+//     });
+//
+// })(jQuery);
+
 //this makes it so that the window doesn't jump when we are on mobile
 window.mobilecheck = function() {
     var check = false;
@@ -57,14 +74,37 @@ $(window).scroll(function(e, data) {
         });
 
     }
-    if (windowScroll >= $('#home').innerHeight() - ($('#home').innerHeight() / 8)) {
-        if (!($('nav').hasClass('tinted-nav'))) {
-            $('nav').addClass('tinted-nav');
-            $('.inner-logo').addClass('svg-pink');
+    if (windowScroll >= ($('#home').innerHeight() - ($('#home').innerHeight() / 8))) {
+        if (!($('nav').hasClass('black-tint'))) {
+            $('nav').addClass('black-tint');
+            $('.inner-logo').addClass('svg-black');
+            // $('nav').addClass('tinted-nav');
+            // $('.inner-logo').addClass('svg-pink');
+
         }
+        clearTimeout($.data(this, "scrollCheck"));
+        $.data(this, "scrollCheck", setTimeout(function() {
+            // $('nav').removeClass('tinted-nav');
+            // $('.inner-logo').removeClass('svg-pink');
+            $('nav').removeClass('black-tint');
+            $('.inner-logo').removeClass('svg-black');
+            $('nav').css({
+                'background-color': 'rgba(0,0,0,0.3)'
+            });
+        }, 500));
+
     } else {
-        $('nav').removeClass('tinted-nav');
-        $('.inner-logo').removeClass('svg-pink');
+        clearTimeout($.data(this, "scrollCheck"));
+        $.data(this, "scrollCheck", setTimeout(function() {
+            // $('nav').removeClass('tinted-nav');
+            // $('.inner-logo').removeClass('svg-pink');
+            $('nav').removeClass('black-tint');
+            $('.inner-logo').removeClass('svg-black');
+        }, 100));
+        // $('nav').removeClass('tinted-nav');
+        // $('.inner-logo').removeClass('svg-pink');
+        $('nav').removeClass('black-tint');
+        $('.inner-logo').removeClass('svg-black');
     }
 
 });
@@ -74,4 +114,7 @@ $(document).ready(function() {
     var verticalCener = Math.floor(window.innerHeight / 2);
     console.log(horizontalCenter + " is horizontalCenter and " + verticalCener + " is vertial");
 
+    $(document).on("scrollstop", function() {
+        alert("Stopped scrolling!");
+    });
 });

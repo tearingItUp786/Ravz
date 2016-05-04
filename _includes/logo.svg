@@ -262,7 +262,7 @@
 <g id="Transparent_rect">
 	<rect x="9.105" y="11.554" fill="none" width="297" height="229"/>
 	<g>
-		<g>
+		<g class="ribbon">
 			<polygon fill="none" stroke="#F2F2F2" stroke-width="2" stroke-miterlimit="10" points="166.455,49.288 159.267,56.849
 				152.384,49.288 159.423,44.803 			"/>
 			<polygon fill="none" stroke="#F2F2F2" stroke-width="2" stroke-miterlimit="10" points="168.194,24.051 159.342,14.162
@@ -281,7 +281,7 @@
 				c4.398-0.185,13.601-5.633,13.9-10.453c1.06-16.911-14.433-29.036-25.337-28.435C209.508,12.074,165.489,38.294,165.489,38.294z"
 				/>
 		</g>
-		<g>
+		<g class="ribbon">
 			<polygon fill="none" stroke="#F2F2F2" stroke-width="2" stroke-miterlimit="10" points="166.455,201.821 159.267,194.261
 				152.384,201.821 159.423,206.306 			"/>
 			<polygon fill="none" stroke="#F2F2F2" stroke-width="2" stroke-miterlimit="10" points="168.194,227.059 159.342,236.947

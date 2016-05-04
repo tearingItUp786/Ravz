@@ -52,6 +52,7 @@ header {
         margin: 0 auto;
         list-style-type: none;
         min-width: 700px;
+        overflow: auto;
         .logo {
             padding: 0;
             // background-image: url("/images/logo.svg");
@@ -72,6 +73,34 @@ header {
                 polygon {
                     stroke: $primary-pink;
                 }
+                .ribbon{
+                  path{
+                    fill: rgba(0,0,0,0);
+                    stroke: $primary-pink;
+                  }
+                  polygon{
+                    stroke: $primary-pink;
+                  }
+                }
+            }
+            .svg-black {
+
+                path {
+                    fill: lighten(black, 20%);
+                    stroke: lighten(black, 20%);
+                }
+                polygon {
+                    stroke: lighten(black, 20%);
+                }
+                .ribbon {
+                    path {
+                        fill: rgba(0,0,0,0);
+                        stroke: black;
+                    }
+                    polygon {
+                        stroke: black;
+                    }
+                }
             }
         }
         .nav-item {
@@ -83,7 +112,7 @@ header {
                 text-decoration: none;
             }
             a:hover {
-                color: black;
+                color: #5d535e;
             }
         }
         .nav-item:nth-child(1) {
@@ -103,6 +132,12 @@ header {
         color: lighten($primary-pink, 10%);
     }
 }
+.black-tint {
+    background-color: rgba(255, 255, 255, 0.8);
+    .navigation > .nav-item > a {
+        color: black;
+    }
+};
 @media(max-width: 900px) {
     .nav-start {
         .navigation {
