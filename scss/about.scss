@@ -1,13 +1,38 @@
 @import "./base/variables";
 .about {
-    padding: 70px 0 70px 0;
+    display: flex;
+    align-items: center;
+    padding: 70px;
+    overflow: hidden;
+    box-sizing: border-box;
     width: 100%;
     height: 100%;
     background: linear-gradient(rgba($primary-pink, 0.6), rgba($primary-pink, 0.6)), url("/images/flower1.jpg");
     background-repeat-x: no-repeat;
     background-size: cover;
     background-position: top;
+    background-attachment: fixed;
+}
+.container {
+    width: 100%;
+}
+.bio {
+    font-size: 2em;
+    font-weight: 100;
 }
 .ravia {
-    width: 100%;
+    margin-top: 1em;
+    max-width: 100%;
+    max-height: 100%;
+}
+@media (max-width: 480px) {
+    .about {
+        padding: 50px 5px;
+    }
+    .bio {
+        font-size: 30px;
+    }
+    .ravia {
+        max-width: 50%;
+    }
 }

@@ -678,8 +678,11 @@ textarea {
   font: inherit;
   /* 2 */ }
 
-html,
-body {
+body,
+html {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
   font-family: "Roboto", sans-serif;
   width: 100%;
   height: 100%;
@@ -689,9 +692,13 @@ body {
 .title {
   font-weight: 100;
   font-size: 70px;
-  margin-top: 0px;
-  padding: 0px;
+  margin-top: 0;
+  padding: 0;
   text-align: center; }
+
+@media (max-width: 800px) {
+  body {
+    text-align: center !important; } }
 
 header {
   position: relative;
@@ -730,11 +737,11 @@ header {
   margin: 0;
   padding: 0;
   z-index: 1999;
-  -webkit-transition: background-color 700ms linear;
-  -moz-transition: background-color 700ms linear;
-  -o-transition: background-color 700ms linear;
-  -ms-transition: background-color 700ms linear;
-  transition: background-color 700ms linear; }
+  -webkit-transition: background-color 400ms linear;
+  -moz-transition: background-color 400ms linear;
+  -o-transition: background-color 400ms linear;
+  -ms-transition: background-color 400ms linear;
+  transition: background-color 400ms linear; }
   .nav-start .col {
     padding: 0; }
   .nav-start .navigation {
@@ -746,7 +753,7 @@ header {
     .nav-start .navigation .logo {
       padding: 0; }
       .nav-start .navigation .logo .inner-logo {
-        width: 80%;
+        max-width: 100%;
         height: 100%; }
       .nav-start .navigation .logo .svg-pink path {
         fill: #fa67bc;
@@ -764,10 +771,8 @@ header {
         color: black; }
     .nav-start .navigation .nav-item:nth-child(1) {
       padding-left: 20px; }
-    .nav-start .navigation .nav-item:nth-child(4) {
-      margin-left: -3%; }
     .nav-start .navigation .nav-item:last-of-type {
-      padding-left: 30px; }
+      padding-left: 15px; }
   .nav-start .c-hamburger {
     display: none; }
 
@@ -803,6 +808,7 @@ header {
     /* active state, i.e. menu open */ }
     .nav-start .navigation {
       margin: 0;
+      min-width: 325px;
       width: 325px;
       font-size: 20px;
       background-color: white; }
@@ -907,13 +913,35 @@ header {
     right: 0; } }
 
 .about {
-  padding: 70px 0 70px 0;
+  display: flex;
+  align-items: center;
+  padding: 70px;
+  overflow: hidden;
+  box-sizing: border-box;
   width: 100%;
   height: 100%;
   background: linear-gradient(rgba(250, 103, 188, 0.6), rgba(250, 103, 188, 0.6)), url("/images/flower1.jpg");
   background-repeat-x: no-repeat;
   background-size: cover;
-  background-position: top; }
+  background-position: top;
+  background-attachment: fixed; }
+
+.container {
+  width: 100%; }
+
+.bio {
+  font-size: 2em;
+  font-weight: 100; }
 
 .ravia {
-  width: 100%; }
+  margin-top: 1em;
+  max-width: 100%;
+  max-height: 100%; }
+
+@media (max-width: 480px) {
+  .about {
+    padding: 50px 5px; }
+  .bio {
+    font-size: 30px; }
+  .ravia {
+    max-width: 50%; } }

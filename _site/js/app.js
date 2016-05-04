@@ -48,14 +48,16 @@ if (window.mobilecheck() === true) {
 $(window).scroll(function(e, data) {
     var windowScroll = $(this).scrollTop();
     console.log(windowScroll);
-    $('.brush').css({
-        'transform': 'translate(0px, ' + windowScroll / 4 + '%)'
-    });
-    $('#greeting').css({
-        'transform': 'translate(0px, ' + windowScroll / 1 + '%)'
-    });
+    if (windowScroll < ($('#home').innerHeight() / 1.5)) {
+        $('.brush').css({
+            'transform': 'translate(0px, ' + windowScroll / 4 + '%)'
+        });
+        $('#greeting').css({
+            'transform': 'translate(0px, ' + windowScroll / 1 + '%)'
+        });
 
-    if (windowScroll >= 400) {
+    }
+    if (windowScroll >= $('#home').innerHeight() - ($('#home').innerHeight() / 8)) {
         if (!($('nav').hasClass('tinted-nav'))) {
             $('nav').addClass('tinted-nav');
             $('.inner-logo').addClass('svg-pink');
