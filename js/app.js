@@ -88,9 +88,9 @@ $(window).scroll(function(e, data) {
             // $('.inner-logo').removeClass('svg-pink');
             $('nav').removeClass('black-tint');
             $('.inner-logo').removeClass('svg-black');
-            $('nav').css({
-                'background-color': 'rgba(0,0,0,0.3)'
-            });
+            // $('nav').css({
+            //     'background-color': 'rgba(0,0,0,0.3)'
+            // });
         }, 500));
 
     } else {
@@ -114,7 +114,13 @@ $(document).ready(function() {
     var verticalCener = Math.floor(window.innerHeight / 2);
     console.log(horizontalCenter + " is horizontalCenter and " + verticalCener + " is vertial");
 
-    $(document).on("scrollstop", function() {
-        alert("Stopped scrolling!");
+    $('.title a').hover(function() {
+        $('.contact').css({
+            'background-color': 'rgb(245, 37, 73)'
+        });
+    }, function() {
+        $('.contact').css({
+            'background-color': 'rgb(250, 103, 188)'
+        });
     });
 });

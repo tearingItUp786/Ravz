@@ -17,14 +17,22 @@ html {
     padding: 0;
     text-align: center;
 }
-
-.grid-wrapper{
-  margin-top: 20px;
-  width: 100%;
+.grid-wrapper {
+    margin-top: 20px;
+    width: 100%;
 }
-
+.about,
+.contact {
+    display: flex;
+    align-items: center;
+    padding: 70px;
+    overflow: hidden;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+}
 @media (max-width: 800px) {
-  body{
-    text-align: center !important;
-  }
+    body {
+        text-align: center !important;
+    }
 }

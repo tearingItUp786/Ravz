@@ -1,0 +1,16 @@
+.contact {
+    background-color: $primary-pink;
+    -webkit-transition: background-color 400ms linear;
+    -moz-transition: background-color 400ms linear;
+    -o-transition: background-color 400ms linear;
+    -ms-transition: background-color 400ms linear;
+    transition: background-color 400ms linear;
+    .grid-wrapper {
+        .title {
+            a {
+                color: white;
+                text-decoration: none;
+            }
+        }
+    }
+}
