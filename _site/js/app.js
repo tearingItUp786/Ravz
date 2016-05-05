@@ -1,21 +1,8 @@
-// (function($) {
-//     $(function() {
-//
-//         $(window).scroll(function() {
-//             clearTimeout($.data(this, "scrollCheck"));
-//             $.data(this, "scrollCheck", setTimeout(function() {
-//                 $('nav').removeClass('tinted-nav');
-//                 $('.inner-logo').removeClass('svg-pink');
-//                 $('nav').addClass('black-tint');
-//             }, 1000));
-//
-//         });
-//
-//     });
-//
-// })(jQuery);
-
 //this makes it so that the window doesn't jump when we are on mobile
+window.onorientationchange = function() {
+    window.location.reload();
+}
+
 window.mobilecheck = function() {
     var check = false;
     (function(a) {
@@ -25,11 +12,11 @@ window.mobilecheck = function() {
 };
 
 if (window.mobilecheck() === true) {
-    var sections = $("#home, #about");
+    var sections = $("#home, #about, #contact");
     $(window).resize("resizeBackground");
 
     function resizeBackground() {
-        sections.height(jQuery(window).height() + 60);
+        sections.height(jQuery(window).height() + 5);
     }
     resizeBackground();
 }
@@ -78,6 +65,7 @@ $(window).scroll(function(e, data) {
         if (!($('nav').hasClass('black-tint'))) {
             $('nav').addClass('black-tint');
             $('.inner-logo').addClass('svg-black');
+            $('nav').removeClass('blackish-tint');
             // $('nav').addClass('tinted-nav');
             // $('.inner-logo').addClass('svg-pink');
 
@@ -88,9 +76,7 @@ $(window).scroll(function(e, data) {
             // $('.inner-logo').removeClass('svg-pink');
             $('nav').removeClass('black-tint');
             $('.inner-logo').removeClass('svg-black');
-            // $('nav').css({
-            //     'background-color': 'rgba(0,0,0,0.3)'
-            // });
+            $('nav').addClass('blackish-tint');
         }, 500));
 
     } else {
@@ -100,6 +86,7 @@ $(window).scroll(function(e, data) {
             // $('.inner-logo').removeClass('svg-pink');
             $('nav').removeClass('black-tint');
             $('.inner-logo').removeClass('svg-black');
+            $('nav').removeClass('blackish-tint');
         }, 100));
         // $('nav').removeClass('tinted-nav');
         // $('.inner-logo').removeClass('svg-pink');

@@ -5,12 +5,10 @@
     -o-transition: background-color 400ms linear;
     -ms-transition: background-color 400ms linear;
     transition: background-color 400ms linear;
-    .grid-wrapper {
-        .title {
-            a {
-                color: white;
-                text-decoration: none;
-            }
-        }
+    justify-content: center;
+    .title {
+        font-size: 50px;
+        color: white;
+        text-decoration: none;
     }
 }

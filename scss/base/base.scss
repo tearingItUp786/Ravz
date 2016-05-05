@@ -8,7 +8,7 @@ html {
     width: 100%;
     height: 100%;
     color: white;
-    background-color: #fa67bc;
+    background-color: #888;
 }
 .title {
     font-weight: 100;
@@ -20,6 +20,13 @@ html {
 .grid-wrapper {
     margin-top: 20px;
     width: 100%;
+    margin-left: 0;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    .grid__col {
+        padding-left: 0;
+    }
 }
 .about,
 .contact {
@@ -28,11 +35,6 @@ html {
     padding: 70px;
     overflow: hidden;
     box-sizing: border-box;
-    width: 100%;
-    height: 100%;
-}
-@media (max-width: 800px) {
-    body {
-        text-align: center !important;
-    }
+    min-width: 100%;
+    min-height: 100%;
 }

@@ -1,7 +1,8 @@
 @import "./base/variables";
 header {
     position: relative;
-    height: 90%;
+    min-height: 90%;
+    min-width: 100%;
     background: url("/images/no-brush.jpg");
     background-repeat: no-repeat;
     background-position: top;
@@ -32,10 +33,10 @@ header {
 .nav-start {
     position: fixed;
     width: 100%;
+    margin: 0;
     height: auto;
     font-weight: 100;
     font-size: 25px;
-    margin: 0;
     padding: 0;
     z-index: 1999;
     -webkit-transition: background-color 400ms linear;
@@ -53,6 +54,9 @@ header {
         list-style-type: none;
         min-width: 700px;
         overflow: auto;
+        max-width: $max-width-for-sections;
+        margin: 0 auto;
+        overflow: hidden;
         .logo {
             padding: 0;
             // background-image: url("/images/logo.svg");
@@ -62,8 +66,11 @@ header {
             // background-repeat: no-repeat;
             // background-position: center;
             .inner-logo {
-                max-width: 100%;
+                display: block;
+                margin: 0 auto;
+                width: 100%;
                 height: 100%;
+                max-width: 150px;
             }
             .svg-pink {
                 path {
@@ -73,18 +80,17 @@ header {
                 polygon {
                     stroke: $primary-pink;
                 }
-                .ribbon{
-                  path{
-                    fill: rgba(0,0,0,0);
-                    stroke: $primary-pink;
-                  }
-                  polygon{
-                    stroke: $primary-pink;
-                  }
+                .ribbon {
+                    path {
+                        fill: rgba(0,0,0,0);
+                        stroke: $primary-pink;
+                    }
+                    polygon {
+                        stroke: $primary-pink;
+                    }
                 }
             }
             .svg-black {
-
                 path {
                     fill: lighten(black, 20%);
                     stroke: lighten(black, 20%);
@@ -112,7 +118,7 @@ header {
                 text-decoration: none;
             }
             a:hover {
-                color: #5d535e;
+                color: #999;
             }
         }
         .nav-item:nth-child(1) {
@@ -137,77 +143,7 @@ header {
     .navigation > .nav-item > a {
         color: black;
     }
-};
-@media(max-width: 900px) {
-    .nav-start {
-        .navigation {
-            width: 80%;
-        }
-    }
-    .nav-item {
-        font-size: 20px;
-    }
 }
-@media (max-width: 800px) {
-    header {
-        .greeting {
-            font-size: 35px;
-        }
-        .brush {
-            right: 0;
-        }
-    }
-    .nav-start {
-        height: 0;
-        .navigation {
-            margin: 0;
-            min-width: 325px;
-            width: 325px;
-            font-size: 20px;
-            background-color: white;
-            // background-color: lighten($primary-pink, 10%);
-            .logo {
-                display: none;
-            }
-            .nav-item {
-                padding: 30px;
-                text-align: center;
-                border-bottom-color: lighten($primary-pink, 20%);
-                border-bottom-style: solid;
-                border-bottom-width: 1px;
-                a {
-                    color: lighten($primary-pink, 10%);
-                    padding: 30px 50px;
-                }
-                a:hover {
-                    color: black;
-                }
-            }
-            .nav-item:last-of-type {
-                border: none;
-            }
-        }
-        .closed {
-            transform: translate(0, -400px);
-            transition: transform 1s;
-        }
-        .open {
-            transform: translate(0, 0);
-            transition: transform 1s;
-        }
-        @import "./tools/hamburger.scss";
-    }
-}
-@media(max-width: 480px) {
-    header {
-        .greeting {
-            margin: 0;
-            font-size: 25px;
-        }
-        .brush {
-            width: 200px;
-            margin-left: 50px;
-            right: 0;
-        }
-    }
+.blackish-tint {
+    background-color: rgba(0,0,0,.4);
 }
