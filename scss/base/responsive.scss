@@ -18,7 +18,7 @@
     }
     .contact {
         .title {
-            font-size: 60px;
+            font-size: 40px;
         }
     }
 }
@@ -87,7 +87,7 @@
     }
     .contact {
         .title {
-            font-size: 40px;
+            font-size: 25px;
         }
     }
 }
@@ -120,6 +120,14 @@
             max-width: 50%;
         }
     }
+    .portfolio {
+        .thumbnail > a > img {
+            height: 100%;
+            width: 60%;
+            display: block;
+            margin: auto;
+        }
+    }
     .contact {
         .title {
             width: 100%;
@@ -127,17 +135,19 @@
         }
     }
 }
-
-@media(max-width: $small-breakpoint) and (orientation: landscape){
-
-}
+@media(max-width: $small-breakpoint) and (orientation: landscape) {}
 @media (max-width: $medium-breakpoint) and (orientation:landscape) {
+    .about,
+    .contact {
+        min-width: 100%;
+        min-height: 100%;
+    }
     .about {
         .bio {
             font-size: 20px;
         }
-        .ravia-container{
-          display: none;
+        .ravia-container {
+            display: none;
         }
     }
 }
