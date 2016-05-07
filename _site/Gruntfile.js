@@ -4,7 +4,7 @@ module.exports = function(grunt) {
     grunt.initConfig({
 
         jekyll: {
-            build : {
+            build: {
                 dest: '_site'
             }
         },
@@ -23,14 +23,14 @@ module.exports = function(grunt) {
                 tasks: ['sass']
             },
             jekyll: {
-                files: ['_layouts/*.html', '_includes/*.html', 'css/main.css', 'js/*.js','index.html',],
+                files: ['_layouts/*.html', '_includes/*.html', 'css/main.css', 'js/*.js', 'index.html', ],
                 tasks: ['jekyll']
             }
         },
 
         browserSync: {
             files: {
-                src : ['_site/css/*.css', '_site/*.html']
+                src: ['_site/css/*.css', '_site/*.html']
             },
             options: {
                 watchTask: true,
@@ -45,6 +45,24 @@ module.exports = function(grunt) {
                 },
                 port: 8080
             }
+        },
+        responsive_images: {
+            myTask: {
+                options: {
+                    engine: 'im',
+                    sizes: [{
+                        namge: "large",
+                        width: '1024px',
+                    }],
+                    quality: 80
+                },
+                files: [{
+                    expand: true,
+                    src: ['**.{JPG,gif,png}'],
+                    cwd: 'images/portfolio_originals/',
+                    dest: 'images/portfolio/'
+                }]
+            }
         }
 
     });
@@ -54,8 +72,10 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-jekyll');
     grunt.loadNpmTasks('grunt-browser-sync');
+    grunt.loadNpmTasks('grunt-responsive-images');
 
     // Custom tasks
     grunt.registerTask('build', ['sass', 'jekyll']);
     grunt.registerTask('default', ['build', 'browserSync', 'watch']);
+    grunt.registerTask('resize', ['responsive_images']);
 };

@@ -37,9 +37,10 @@ window.mobilecheck = function() {
 var sections = $("#home, #about, #contact");
 
 function resizeBackground() {
-    sections.height(jQuery(window).width() + 55);
+    sections.height(jQuery(window).width() + 60);
 }
 if (window.mobilecheck() === true) {
+    sections.height($(window).height() +60);
     $(window).on('orientationchange', function() {
         resizeBackground();
     });

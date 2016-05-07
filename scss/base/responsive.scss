@@ -134,6 +134,15 @@
             font-size: 1.5em;
         }
     }
+    .footer {
+        padding: 0;
+        .designed {
+            font-size: 1em;
+        }
+        .quote {
+            font-size: 1em;
+        }
+    }
 }
 @media(max-width: $small-breakpoint) and (orientation: landscape) {}
 @media (max-width: $medium-breakpoint) and (orientation:landscape) {

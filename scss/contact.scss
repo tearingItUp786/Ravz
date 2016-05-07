@@ -6,6 +6,9 @@
     -ms-transition: background-color 400ms linear;
     transition: background-color 400ms linear;
     justify-content: center;
+    &:hover{
+      background-color: $secondary-pink;
+    }
     .title {
         font-size: 40px;
         color: white;

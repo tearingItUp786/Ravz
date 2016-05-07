@@ -3,7 +3,7 @@ header {
     position: relative;
     min-height: 90%;
     min-width: 100%;
-    background: url("/images/no-brush.jpg");
+    background: url("../images/no-brush.jpg");
     background-repeat: no-repeat;
     background-position: top;
     background-size: cover;
@@ -20,7 +20,7 @@ header {
     .brush {
         width: 300px;
         height: 300px;
-        background: url("/images/brush-solo.png");
+        background: url("../images/brush-solo.png");
         background-repeat: no-repeat;
         background-size: contain;
         background-position: right bottom;

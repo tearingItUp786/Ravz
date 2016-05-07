@@ -14,7 +14,9 @@
     "grunt-browser-sync": "^2.2.0",
     "grunt-contrib-sass": "^1.0.0",
     "grunt-contrib-watch": "^1.0.0",
+    "grunt-image-resize": "^1.0.0",
     "grunt-jekyll": "^0.4.4",
+    "grunt-responsive-images": "^0.1.7",
     "grunt-sass": "^1.1.0"
   },
   "dependencies": {
