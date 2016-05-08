@@ -754,11 +754,11 @@ header {
   font-size: 20px;
   padding: 0;
   z-index: 1999;
-  -webkit-transition: background-color 400ms linear;
-  -moz-transition: background-color 400ms linear;
-  -o-transition: background-color 400ms linear;
-  -ms-transition: background-color 400ms linear;
-  transition: background-color 400ms linear; }
+  -webkit-transition: background-color 600ms linear;
+  -moz-transition: background-color 600ms linear;
+  -o-transition: background-color 600ms linear;
+  -ms-transition: background-color 600ms linear;
+  transition: background-color 600ms linear; }
   .nav-start .col {
     padding: 0; }
   .nav-start .navigation {
@@ -766,7 +766,6 @@ header {
     padding: 0;
     margin: 0 auto;
     list-style-type: none;
-    min-width: 700px;
     overflow: auto;
     max-width: 1100px;
     margin: 0 auto;
@@ -813,6 +812,8 @@ header {
     .nav-start .navigation .nav-item:last-of-type {
       padding-left: 15px; }
   .nav-start .c-hamburger {
+    display: none; }
+  .nav-start .logo_mobile {
     display: none; }
 
 .tinted-nav {
@@ -962,7 +963,8 @@ header {
       min-width: 325px;
       width: 325px;
       font-size: 20px;
-      background-color: white; }
+      background-color: white;
+      overflow: auto; }
       .nav-start .navigation .logo {
         display: none; }
       .nav-start .navigation .nav-item {
@@ -980,10 +982,22 @@ header {
         border: none; }
     .nav-start .closed {
       transform: translate(0, -400px);
-      transition: transform 1s; }
+      transition: transform 500ms; }
     .nav-start .open {
       transform: translate(0, 0);
-      transition: transform 1s; }
+      transition: transform 500ms; }
+    .nav-start .logo_mobile {
+      display: block;
+      position: absolute;
+      top: 0;
+      max-width: 100px;
+      left: 50%;
+      margin-left: -50px; }
+      .nav-start .logo_mobile .closed {
+        display: none; }
+      .nav-start .logo_mobile svg {
+        width: 100%;
+        height: 100%; }
     .nav-start .c-hamburger {
       display: block;
       position: absolute;
@@ -1067,23 +1081,37 @@ header {
     padding: 50px 10px; }
   .contact {
     padding: 50px 0; }
-  header .greeting {
-    margin: 0;
-    font-size: 25px; }
-  header .brush {
-    width: 200px;
-    margin-left: 50px;
-    right: 0; }
-  .about .bio {
-    font-size: 20px; }
-  .about .ravia-container {
-    display: none;
-    max-width: 50%; }
-  .portfolio .thumbnail > a > img {
-    height: 100%;
-    width: 60%;
-    display: block;
-    margin: auto; }
+  header {
+    background: url("../images/mobile_backgrounds/no-brush_mobile.jpg");
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    background-attachment: fixed; }
+    header .greeting {
+      margin: 0;
+      font-size: 25px; }
+    header .brush {
+      width: 200px;
+      margin-left: 50px;
+      right: 0; }
+  .about {
+    background: linear-gradient(rgba(250, 103, 188, 0.6), rgba(250, 103, 188, 0.6)), url("../images/mobile_backgrounds/flower1_mobile.jpg");
+    background-repeat-x: no-repeat;
+    background-size: cover;
+    background-attachment: fixed; }
+    .about .bio {
+      font-size: 20px; }
+    .about .ravia-container {
+      display: none;
+      max-width: 50%; }
+  .portfolio {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../images/mobile_backgrounds/couple1_mobile.jpg");
+    background-attachment: fixed; }
+    .portfolio .thumbnail > a > img {
+      height: 100%;
+      width: 60%;
+      display: block;
+      margin: auto; }
   .contact .title {
     width: 100%;
     font-size: 1.5em; }

@@ -45,7 +45,7 @@
             width: 325px;
             font-size: 20px;
             background-color: white;
-            // background-color: lighten($primary-pink, 10%);
+            overflow: auto;
             .logo {
                 display: none;
             }
@@ -69,11 +69,26 @@
         }
         .closed {
             transform: translate(0, -400px);
-            transition: transform 1s;
+            transition: transform 500ms;
         }
         .open {
             transform: translate(0, 0);
-            transition: transform 1s;
+            transition: transform 500ms;
+        }
+        .logo_mobile {
+            display: block;
+            position: absolute;
+            top: 0;
+            max-width: 100px;
+            left: 50%;
+            margin-left: -50px;
+            .closed {
+                display: none;
+            }
+            svg {
+                width: 100%;
+                height: 100%;
+            }
         }
         @import "scss/tools/hamburger.scss";
     }
@@ -101,6 +116,11 @@
         padding: 50px 0;
     }
     header {
+        background: url("../images/mobile_backgrounds/no-brush_mobile.jpg");
+        background-repeat: no-repeat;
+        background-position: top;
+        background-size: cover;
+        background-attachment: fixed;
         .greeting {
             margin: 0;
             font-size: 25px;
@@ -112,6 +132,10 @@
         }
     }
     .about {
+        background: linear-gradient(rgba($primary-pink, 0.6), rgba($primary-pink, 0.6)), url("../images/mobile_backgrounds/flower1_mobile.jpg");
+        background-repeat-x: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
         .bio {
             font-size: 20px;
         }
@@ -121,6 +145,8 @@
         }
     }
     .portfolio {
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../images/mobile_backgrounds/couple1_mobile.jpg");
+        background-attachment: fixed;
         .thumbnail > a > img {
             height: 100%;
             width: 60%;

@@ -39,11 +39,11 @@ header {
     font-size: 20px;
     padding: 0;
     z-index: 1999;
-    -webkit-transition: background-color 400ms linear;
-    -moz-transition: background-color 400ms linear;
-    -o-transition: background-color 400ms linear;
-    -ms-transition: background-color 400ms linear;
-    transition: background-color 400ms linear;
+    -webkit-transition: background-color 600ms linear;
+    -moz-transition: background-color 600ms linear;
+    -o-transition: background-color 600ms linear;
+    -ms-transition: background-color 600ms linear;
+    transition: background-color 600ms linear;
     .col {
         padding: 0;
     }
@@ -52,19 +52,13 @@ header {
         padding: 0;
         margin: 0 auto;
         list-style-type: none;
-        min-width: 700px;
+        // min-width: 700px;
         overflow: auto;
         max-width: $max-width-for-sections;
         margin: 0 auto;
         overflow: hidden;
         .logo {
             padding: 0;
-            // background-image: url("/images/logo.svg");
-            // width: 20%;
-            // height: 105px;
-            // background-size: contain;
-            // background-repeat: no-repeat;
-            // background-position: center;
             .inner-logo {
                 display: block;
                 margin: 0 auto;
@@ -129,6 +123,9 @@ header {
         }
     }
     .c-hamburger {
+        display: none;
+    }
+    .logo_mobile {
         display: none;
     }
 }
