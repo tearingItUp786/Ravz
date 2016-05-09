@@ -1,32 +1,39 @@
 //this makes it so that the window doesn't jump when we are on mobile
 
-(function() {
+$(function() {
+    var toggle = document.querySelector('.c-hamburger');
+    toggle.addEventListener("click", function(e) {
+        e.preventDefault();
+        if ($(this).hasClass('is-active')) {
+            $(this).removeClass('is-active');
+            $('.navigation').removeClass('open');
+            $('.logo_mobile').removeClass('closed');
+            $('.logo_mobile').removeClass('closed');
+        } else {
+            $(this).addClass('is-active');
+            $('.navigation').addClass('open');
+            $('.logo_mobile').addClass('closed');
+            $('.logo_mobile').addClass('closed');
+        }
+    });
 
-    "use strict";
-
-    var toggles = document.querySelectorAll(".c-hamburger");
-
-    for (var i = toggles.length - 1; i >= 0; i--) {
-        var toggle = toggles[i];
-        toggleHandler(toggle);
-    }
-
-    function toggleHandler(toggle) {
-        toggle.addEventListener("click", function(e) {
-            e.preventDefault();
-            if ($(this).hasClass('is-active')) {
-                $(this).removeClass('is-active');
-                $('.navigation').removeClass('open');
-                $('.logo_mobile').removeClass('closed');
-            } else {
-                $(this).addClass('is-active');
-                $('.navigation').addClass('open');
-                $('.logo_mobile').addClass('closed');
+    $('a[href*="#"]:not([href="#"])').click(function() {
+        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+            var target = $(this.hash);
+            targt = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+            if ($('.navigation').hasClass('open')) {
+                console.log("Trigger click");
+                $('.c-hamburger').trigger('click');
             }
-        });
-    }
-
-})();
+            if (target.length) {
+                $('html, body').animate({
+                    scrollTop: target.offset().top
+                }, 1000);
+                return false;
+            }
+        }
+    });
+});
 
 window.mobilecheck = function() {
     var check = false;
@@ -105,13 +112,6 @@ $(document).ready(function() {
             }
 
         }
-
-        $('#about').css('background-position', 'top ' + ((windowScroll)) + 'px');
     });
 
-    $('.navigation li').click(function() {
-        $('.navigation').removeClass('open');
-        $('.c-hamburger').removeClass('is-active');
-        $('.logo_mobile').removeClass('closed');
-    });
 });

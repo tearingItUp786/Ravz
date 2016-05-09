@@ -50,9 +50,12 @@ module.exports = function(grunt) {
             myTask: {
                 options: {
                     engine: 'im',
+                    newFilesOnly: false,
                     sizes: [{
                         namge: "large",
-                        width: '1024px',
+                        width: '350px',
+                        height: '350px',
+                        aspectRatio: false
                     }],
                     quality: 80
                 },
@@ -60,7 +63,7 @@ module.exports = function(grunt) {
                     expand: true,
                     src: ['**.{JPG,gif,png}'],
                     cwd: 'images/portfolio_originals/',
-                    dest: 'images/portfolio/'
+                    dest: 'images/thumbnails/'
                 }]
             }
         },
