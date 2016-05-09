@@ -1084,9 +1084,8 @@ header {
   header {
     background: url("../images/mobile_backgrounds/no-brush_mobile.jpg");
     background-repeat: no-repeat;
-    background-position: top;
-    background-size: cover;
-    background-attachment: fixed; }
+    background-position: center;
+    background-size: cover; }
     header .greeting {
       margin: 0;
       font-size: 25px; }
@@ -1096,8 +1095,9 @@ header {
       right: 0; }
   .about {
     background: linear-gradient(rgba(250, 103, 188, 0.6), rgba(250, 103, 188, 0.6)), url("../images/mobile_backgrounds/flower1_mobile.jpg");
-    background-repeat-x: no-repeat;
+    background-repeat: no-repeat;
     background-size: cover;
+    background-position: left center;
     background-attachment: fixed; }
     .about .bio {
       font-size: 20px; }

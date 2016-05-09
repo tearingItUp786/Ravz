@@ -105,6 +105,8 @@ $(document).ready(function() {
             }
 
         }
+
+        $('#about').css('background-position', 'top ' + ((windowScroll)) + 'px');
     });
 
     $('.navigation li').click(function() {

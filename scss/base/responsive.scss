@@ -118,9 +118,8 @@
     header {
         background: url("../images/mobile_backgrounds/no-brush_mobile.jpg");
         background-repeat: no-repeat;
-        background-position: top;
+        background-position: center;
         background-size: cover;
-        background-attachment: fixed;
         .greeting {
             margin: 0;
             font-size: 25px;
@@ -133,8 +132,9 @@
     }
     .about {
         background: linear-gradient(rgba($primary-pink, 0.6), rgba($primary-pink, 0.6)), url("../images/mobile_backgrounds/flower1_mobile.jpg");
-        background-repeat-x: no-repeat;
+        background-repeat: no-repeat;
         background-size: cover;
+        background-position: left center;
         background-attachment: fixed;
         .bio {
             font-size: 20px;
