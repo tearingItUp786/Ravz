@@ -41,60 +41,12 @@ var sections = $("#home, #about, #contact");
 function resizeBackground() {
     sections.height(jQuery(window).width() + 60);
 }
-if (window.mobilecheck() === true) {
-    // sections.height($(window).height() +60);
-    // $(window).on('orientationchange', function() {
-    //     resizeBackground();
-    // });
-}
-
-
-$(window).scroll(function(e, data) {
-    var windowScroll = $(this).scrollTop();
-    if (windowScroll < ($('#home').innerHeight() / 1.5)) {
-        $('.brush').css({
-            'transform': 'translate(0px, ' + windowScroll / 4 + '%)'
-        });
-        $('#greeting').css({
-            'transform': 'translate(0px, ' + windowScroll / 1 + '%)'
-        });
-
+$(window).resize(function() {
+    if ($(window).width() < 800) {
+        $('nav').removeClass('blackish-tint');
     }
-
-    if (window.mobilecheck() === false || $('window').width() > 800) {
-        if (windowScroll >= ($('#home').innerHeight() - ($('#home').innerHeight() / 8))) {
-            if (!($('nav').hasClass('black-tint'))) {
-                $('nav').addClass('black-tint');
-                $('.inner-logo').addClass('svg-black');
-                $('nav').removeClass('blackish-tint');
-
-            }
-            clearTimeout($.data(this, "scrollCheck"));
-            $.data(this, "scrollCheck", setTimeout(function() {
-                $('nav').removeClass('black-tint');
-                $('.inner-logo').removeClass('svg-black');
-                $('nav').addClass('blackish-tint');
-            }, 500));
-
-        } else {
-            clearTimeout($.data(this, "scrollCheck"));
-            $.data(this, "scrollCheck", setTimeout(function() {
-                $('nav').removeClass('black-tint');
-                $('.inner-logo').removeClass('svg-black');
-                $('nav').removeClass('blackish-tint');
-            }, 100));
-            $('nav').removeClass('black-tint');
-            $('.inner-logo').removeClass('svg-black');
-        }
-
-    } else {
-        $('.navigation li').click(function() {
-            $('.navigation').removeClass('open');
-            $('.c-hamburger').removeClass('is-active');
-        });
-    }
-
 });
+
 
 $(document).ready(function() {
     $('.title a').hover(function() {
@@ -114,4 +66,50 @@ $(document).ready(function() {
         });
     }
 
+    $(window).scroll(function(e, data) {
+        var windowScroll = $(this).scrollTop();
+        if (windowScroll < ($('#home').innerHeight() / 1.5)) {
+            $('.brush').css({
+                'transform': 'translate(0px, ' + windowScroll / 4 + '%)'
+            });
+            $('#greeting').css({
+                'transform': 'translate(0px, ' + windowScroll / 1 + '%)'
+            });
+
+        }
+
+        if (window.mobilecheck() === false && $(window).width() > 800) {
+            if (windowScroll >= ($('#home').innerHeight() - ($('#home').innerHeight() / 8))) {
+                if (!($('nav').hasClass('black-tint'))) {
+                    $('nav').addClass('black-tint');
+                    $('.inner-logo').addClass('svg-black');
+                    $('nav').removeClass('blackish-tint');
+
+                }
+                clearTimeout($.data(this, "scrollCheck"));
+                $.data(this, "scrollCheck", setTimeout(function() {
+                    $('nav').removeClass('black-tint');
+                    $('.inner-logo').removeClass('svg-black');
+                    $('nav').addClass('blackish-tint');
+                }, 500));
+
+            } else {
+                clearTimeout($.data(this, "scrollCheck"));
+                $.data(this, "scrollCheck", setTimeout(function() {
+                    $('nav').removeClass('black-tint');
+                    $('.inner-logo').removeClass('svg-black');
+                    $('nav').removeClass('blackish-tint');
+                }, 100));
+                $('nav').removeClass('black-tint');
+                $('.inner-logo').removeClass('svg-black');
+            }
+
+        }
+    });
+
+    $('.navigation li').click(function() {
+        $('.navigation').removeClass('open');
+        $('.c-hamburger').removeClass('is-active');
+        $('.logo_mobile').removeClass('closed');
+    });
 });

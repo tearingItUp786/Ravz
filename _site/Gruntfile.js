@@ -23,7 +23,7 @@ module.exports = function(grunt) {
                 tasks: ['sass']
             },
             jekyll: {
-                files: ['_layouts/*.html', '_includes/*.html', 'css/main.css', 'js/*.js', 'index.html', ],
+                files: ['_layouts/*.html', '_includes/*.html', 'css/*', 'js/*.js', 'index.html', ],
                 tasks: ['jekyll']
             }
         },
@@ -63,6 +63,28 @@ module.exports = function(grunt) {
                     dest: 'images/portfolio/'
                 }]
             }
+        },
+        cssmin: {
+            options: {
+                shorthandCompacting: false,
+                roundingPrecision: -1
+            },
+            target: {
+                files: {
+                    'css/main.min.css': ['css/main.css'],
+                }
+            }
+        },
+        uglify: {
+            my_target: {
+                options: {
+                    sourceMap: true,
+                    sourceMapName: 'js/sourcemap.map'
+                },
+                files: {
+                    'js/app.min.js': ['js/app.js']
+                }
+            }
         }
 
     });
@@ -73,9 +95,12 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-jekyll');
     grunt.loadNpmTasks('grunt-browser-sync');
     grunt.loadNpmTasks('grunt-responsive-images');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
 
     // Custom tasks
     grunt.registerTask('build', ['sass', 'jekyll']);
     grunt.registerTask('default', ['build', 'browserSync', 'watch']);
     grunt.registerTask('resize', ['responsive_images']);
+    grunt.registerTask('min', ['cssmin', 'uglify']);
 };
