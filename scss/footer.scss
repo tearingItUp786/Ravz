@@ -1,14 +1,8 @@
 .footer {
-    display: flex;
-    align-items: center;
-    box-sizing: border-box;
-    width: 100%;
-    min-height: 20%;
-    padding: 70px;
+    height: auto;
     background-color: white;
     color: black;
-    flex-wrap: wrap;
-    justify-content: center;
+    padding: 20px;
     .images {
         img {
             max-width: 30px;

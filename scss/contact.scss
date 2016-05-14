@@ -5,13 +5,19 @@
     -o-transition: background-color 400ms linear;
     -ms-transition: background-color 400ms linear;
     transition: background-color 400ms linear;
-    justify-content: center;
-    &:hover{
-      background-color: $secondary-pink;
+    &:hover {
+        background-color: $secondary-pink;
+    }
+    .contact-info {
+        list-style: none;
+        li {
+            text-align: center;
+        }
     }
     .title {
-        font-size: 40px;
+        font-size: 35px;
         color: white;
         text-decoration: none;
+        width: 100%;
     }
 }

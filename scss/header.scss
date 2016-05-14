@@ -16,6 +16,7 @@ header {
         left: 10%;
         font-size: 45px;
         z-index: 1;
+        transition: all 1s;
     }
     .brush {
         width: 300px;
@@ -28,6 +29,7 @@ header {
         bottom: 0;
         left: 50%;
         margin-left: 150px;
+        transition: all 1s;
     }
 }
 .nav-start {
@@ -39,11 +41,11 @@ header {
     font-size: 20px;
     padding: 0;
     z-index: 1999;
-    -webkit-transition: background-color 600ms linear;
-    -moz-transition: background-color 600ms linear;
-    -o-transition: background-color 600ms linear;
-    -ms-transition: background-color 600ms linear;
-    transition: background-color 600ms linear;
+    -webkit-transition: background-color 700ms linear;
+    -moz-transition: background-color 700ms linear;
+    -o-transition: background-color 700ms linear;
+    -ms-transition: background-color 700ms linear;
+    transition: background-color 700ms linear;
     .col {
         padding: 0;
     }

@@ -52,7 +52,7 @@ module.exports = function(grunt) {
                     engine: 'im',
                     newFilesOnly: false,
                     sizes: [{
-                        namge: "large",
+                        namge: "small",
                         width: '350px',
                         height: '350px',
                         aspectRatio: false

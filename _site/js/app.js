@@ -22,13 +22,12 @@ $(function() {
             var target = $(this.hash);
             targt = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
             if ($('.navigation').hasClass('open')) {
-                console.log("Trigger click");
                 $('.c-hamburger').trigger('click');
             }
             if (target.length) {
                 $('html, body').animate({
                     scrollTop: target.offset().top
-                }, 1000);
+                }, 500);
                 return false;
             }
         }
@@ -75,12 +74,12 @@ $(document).ready(function() {
 
     $(window).scroll(function(e, data) {
         var windowScroll = $(this).scrollTop();
-        if (windowScroll < ($('#home').innerHeight() / 1.5)) {
+        if (windowScroll < Math.floor($('#home').innerHeight())) {
             $('.brush').css({
-                'transform': 'translate(0px, ' + windowScroll / 4 + '%)'
+                'transform': 'translate(0px, ' + Math.floor(windowScroll / 2) + 'px)'
             });
             $('#greeting').css({
-                'transform': 'translate(0px, ' + windowScroll / 1 + '%)'
+                'transform': 'translate(0px, ' + windowScroll / 1 + 'px)'
             });
 
         }
