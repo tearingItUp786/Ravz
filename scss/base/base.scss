@@ -36,9 +36,15 @@ html {
     display: -webkit-flex;
     display: -moz-flex;
     align-items: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
     box-sizing: border-box;
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     justify-content: center;
+    -webkit-justify-content: center;
     padding: 70px;
     overflow: hidden;
     width: 100%;
